@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+ <link rel="stylesheet" type="text/css" href="style1.css">
+ <title>Comment Module</title>
+</head>
+<body>
+ <div class="comment_module">
+  
+  <div class="author">
+   <div class="profile-img" id="profile_img">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" /> 
+   </div>
+   <div class="author-info">
+    <strong id="name">
+     Akash Acharya
+    </strong>
+    <small id="date">
+     Oct 08, 2020
+    </small>
+   </div>
+  </div>
+  <div class="comment-box" id="comment-button1">
+   <textarea placeholder="Enter comment here" class="textarea"></textarea>
+   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+   <script>
+    $('.textarea').emojioneArea({
+     pickerPosition: 'bottom'
+    });
+   </script> -->
+   <div class="comment-button">
+    <button type="button" class="btn btn-primary">Comment</button>
+   </div>
+  </div>
+
+  <div id = "comments">
+  <div class="comments-container" id="comment1" >
+   <div class="author">
+    <div class="profile-img" id="profile_img">
+     <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" /> 
+    </div>
+    <div class="author-info">
+     <strong id="name">
+      Akash Acharya
+     </strong>
+     <small id="date">
+      Oct 08, 2020
+     </small>
+    </div>
+   </div>
+   <!-- <div id = "comments"> -->
+    <div class = "comment">
+    <p>
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati consequatur voluptatibus laborum sit ab. Laborum dolores aliquid iusto, voluptatum fuga voluptas commodi, vitae repellat, sint animi illum sunt natus eaque.
+    </p>
+   </div>
+  <!-- </div> -->
+   <div class="comment-reaction">
+    <button class="like-btn">
+     <span id="icon"><i class="far fa-thumbs-up"></i></span>
+     <span id="count">0</span> Like
+   </button>
+     <!--<span class="heart"></span>
+      <span class="like">
+       24
+      </span> -->
+     <span class="comment-reply">
+      Reply
+     </span> 
+     <span class="edit-comment">
+      Edit
+     </span>
+    
+   </div>
+                       
+  </div>
+
+ </div>
+
+ </div>
+ <script src="./script.js"></script>
+</body>
+</html>
