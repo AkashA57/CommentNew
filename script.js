@@ -1,19 +1,16 @@
-const textarea = document.getElementById('textarea');
-const commentButton = document.getElementById('comment-button');
-
 var divCommentCounter = 2; 
 var commentButtonCounter = 2;
 
-
 const likeBtn = document.querySelector(".like-btn");
 const replyBtn = document.querySelector(".comment-reply");
+const commentBox = document.querySelector(".comment-box");
 const commentBtn = document.querySelector(".comment-box").querySelector(".btn.btn-primary");
 const commentsCotainer = document.querySelector(".comments-container");
 let likeIcon = document.querySelector("#icon"),
   count = document.querySelector("#count");
 
 var comments = document.getElementById("comments");
-var txt_node = document.querySelector(".textarea");
+var txt_node = document.querySelector(".text-area");
 
 
 // likeBtn.addEventListener("click", () => {
@@ -42,16 +39,16 @@ var CommentsButtonListener = function (textNode, isReply, childToRemove) {
     }
  
     const childDev = commentsCotainer.cloneNode(true); 
-    var txtArea = childDev.querySelector(".textarea")
-    if (txtArea != null) {
-      txtArea.setAttribute("placeholder", "Enter comment here");
-    }
     // childDev.setAttribute("class", "comments-container");
  
     // childDev.setAttribute("id", "comment2");
  
     childDev.id = "comment" + divCommentCounter;
     divCommentCounter += 1;
+    var txtArea = childDev.querySelector(".text-area")
+    if (txtArea != null) {
+      txtArea.value = "";
+    }
     var commentChild = childDev.querySelector(".comment")
     commentChild.textContent = comment; 
     var replyButton = childDev.querySelector(".comment-reply");
@@ -65,25 +62,28 @@ var CommentsButtonListener = function (textNode, isReply, childToRemove) {
     // childDev.appendChild(newContent); 
     if (!isReply){
      comments.insertBefore( childDev, comments.firstChild ); 
+     commentBox.querySelector(".text-area").value="";
     } else {
-     comments.appendChild(childDev);; 
+     comments.appendChild(childDev);
     }
    };
 }
 
 var ReplyEventListener = function() {
  return function(event) {
-  const commentBox = document.querySelector(".comment-box")
   const childDev = commentBox.cloneNode(true);
   childDev.id = "comment-button" + commentButtonCounter;
   commentButtonCounter += 1;
+  var txtArea = childDev.querySelector(".text-area")
+  if (txtArea != null) {
+    txtArea.value = "";
+  }
   childDev.querySelector(".btn.btn-primary").addEventListener("click", 
-       CommentsButtonListener(childDev.querySelector(".textarea"), true, childDev));
+       CommentsButtonListener(childDev.querySelector(".text-area"), true, childDev));
  
   event.target.parentElement.parentElement.appendChild( childDev); 
  };
 }
-
 
 
 commentBtn.addEventListener("click", CommentsButtonListener(txt_node, false, null));
